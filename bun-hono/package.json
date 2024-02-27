@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "seed": "bun run drizzle/seed.ts",
+    "migrate": "bun run drizzle/migrate.ts",
+    "generate": "bunx drizzle-kit generate:sqlite --schema ./drizzle/schema.ts"
   },
   "dependencies": {
     "drizzle-orm": "^0.29.4",
