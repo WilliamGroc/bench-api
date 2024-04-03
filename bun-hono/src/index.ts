@@ -1,8 +1,10 @@
 import { Hono } from 'hono'
 import { db } from './db';
 import * as schema from '../drizzle/schema';
+import { logger } from 'hono/logger'
 
 const app = new Hono()
+app.use(logger())
 
 app.get('/movies', async (c) => {
   const result = await db.select().from(schema.movies);
